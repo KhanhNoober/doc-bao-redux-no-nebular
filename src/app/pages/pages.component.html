@@ -1,0 +1,21 @@
+<div class="articles-container" *ngFor="let article of (articles$ | async)" style="width: 50%; margin: 0 auto;">
+  <div class="article">
+    <div class="info">
+      <img class="info-img" [src]="article.user.profile_image">
+      <div>
+        <p class="info-name">{{article.user.name}}</p>
+        <p class="info-id">@{{article.user.username}}</p>
+      </div>
+    </div>
+    <div>
+      <h2 class="title">{{article.title}}</h2>
+    </div>
+    <div style="width: 100%;">
+      <img class="image" [src]="article.social_image" [alt]="article.title">
+      <p class="description">{{article.description}}</p>
+    </div>
+    <div>
+      <button class="btn" (click)="gotoArticle(article.url)">Read more</button>
+    </div>
+  </div>
+</div>
